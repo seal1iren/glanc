@@ -59,3 +59,18 @@
       </footer>
    </body>
 </html>
+
+<script>
+  const zagolovok = document.querySelector('.zagolovok h1');
+
+window.addEventListener('scroll', function() {
+  const scrollTop = window.pageYOffset;
+  const zagolovokTop = zagolovok.getBoundingClientRect().top;
+
+  const newTop = Math.max(0, zagolovokTop - scrollTop * 0.5); // Зміщення на 50% від прокрутки
+  const newSize = Math.max(250, 400 - scrollTop * 0.25); // Зменшення на 25% від прокрутки
+
+  zagolovok.style.top = `${newTop}px`;
+  zagolovok.style.fontSize = `${newSize}px`;
+});
+</script>
